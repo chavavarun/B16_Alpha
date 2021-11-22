@@ -1,0 +1,100 @@
+<div class="login-main">
+  <div>
+    <img src="../../assets/login_cover.svg" alt="" />
+  </div>
+  <mat-divider
+    vertical
+    style="height: 100vh; border-right-width: 2px"
+  ></mat-divider>
+  <div>
+    <div class="main-head">
+      <h2><strong>My Bookstore</strong></h2>
+      <p>The Things with Feelings...</p>
+    </div>
+    <mat-card style="margin-bottom: 30px">
+      <form [formGroup]="loginForm" *ngIf="loginPage">
+        <h4>Login</h4>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="username" />
+          <mat-error
+            *ngIf="loginForm && loginForm.hasError('required', 'username')"
+          >
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="loginForm.hasError('required', 'password')">
+            password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="loginUser()">
+          Login
+        </button>
+        <mat-error *ngIf="errMsg"
+          >username or password are incorrect!!</mat-error
+        >
+      </form>
+      <form [formGroup]="registerForm" *ngIf="!loginPage">
+        <h4>Register</h4>
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input type="text" matInput formControlName="firstName" />
+          <mat-error *ngIf="registerForm.hasError('required', 'firstName')">
+            fisrt name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input type="text" matInput formControlName="lastName" />
+          <mat-error *ngIf="registerForm.hasError('required', 'lastName')">
+            last name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="username" />
+          <mat-error *ngIf="registerForm.hasError('required', 'username')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="registerForm.hasError('required', 'password')">
+            password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput formControlName="confirmPassword" />
+          <mat-error
+            *ngIf="registerForm.hasError('required', 'confirmPassword')"
+          >
+            Confirm password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="registerUser()">
+          Register
+        </button>
+        <mat-error *ngIf="errReg"
+          >something went wrong please try again!!</mat-error
+        >
+      </form>
+    </mat-card>
+    <p *ngIf="loginPage">
+      Don't have an account?
+      <button mat-flat-button color="accent" (click)="togglePage()">
+        Register
+      </button>
+    </p>
+    <p *ngIf="!loginPage">
+      Already have an account?
+      <button mat-flat-button color="accent" (click)="togglePage()">
+        Login
+      </button>
+    </p>
+  </div>
+</div>

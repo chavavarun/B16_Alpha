@@ -1,0 +1,24 @@
+<p>
+  <mat-toolbar color="primary">
+    <span class="main-head">My Bookstore</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerLink="/favorite">
+      <mat-icon matBadge="{{ wishCount }}" matBadgeColor="warn"
+        >favorite</mat-icon
+      >
+    </button>
+    <button mat-icon-button routerLink="/cart-items">
+      <mat-icon matBadge="{{ cartCount }}" matBadgeColor="warn"
+        >shopping_cart</mat-icon
+      >
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      {{ username }}<mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/orders">My orders</button>
+      <button mat-menu-item>Log out</button>
+    </mat-menu>
+  </mat-toolbar>
+</p>

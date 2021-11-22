@@ -1,0 +1,15 @@
+.login-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.main-head {
+  font-family: cursive;
+  position: absolute;
+  top: 25px;
+}

@@ -1,0 +1,52 @@
+<app-top-nav></app-top-nav>
+<div>
+  <mat-form-field class="search">
+    <mat-label>Search by Title or Author or catorgy</mat-label>
+    <input
+      type="text"
+      matInput
+      [(ngModel)]="target"
+      (ngModelChange)="applyFilter(target)"
+    />
+  </mat-form-field>
+  <div class="main-content">
+    <div *ngFor="let book of allBooks">
+      <mat-card class="main-card">
+        <div class="book-info">
+          <span matTooltip="{{ book.title }}" matTooltipPosition="above"></span>
+          <span
+            matTooltip="{{ book.author }}"
+            matTooltipPosition="below"
+          ></span>
+        </div>
+        <mat-card-content
+          matTooltip="{{ book.title }}"
+          matTooltipPosition="above"
+        >
+          <img
+            mat-card-image
+            [src]="cleanImage(book.coverFileName)"
+            height="300px"
+          />
+          <div>Price: &#x20b9;{{ book.price }}</div>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="addToCartlist(book.bookId)"
+          >
+            Add to cart
+          </button>
+          &nbsp; &nbsp;
+          <mat-icon
+            (click)="addTowishlist(book.bookId)"
+            [ngClass]="toggle ? 'redIcon' : 'blackIcon'"
+            >favorite</mat-icon
+          >
+        </mat-card-actions>
+      </mat-card>
+      <br />
+    </div>
+  </div>
+</div>
