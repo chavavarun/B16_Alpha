@@ -1,0 +1,54 @@
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 220px;
+  }
+  .main-card {
+    height: 450px;
+    width: 230px;
+    margin: 10px;
+    bottom: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  .book-info {
+    position: absolute;
+    top: 300px;
+  }
+  .main-card:hover {
+    width: 240px;
+    bottom: 10px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+  }
+  .search {
+    display: inline-block;
+    width: 52%;
+    position: relative;
+    left: 33%;
+  }
+  .redIcon {
+    color: red;
+    font-size: 28px;
+  }
+  .blackIcon {
+    color: black;
+    font-size: 30px;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  @media (max-width: 600px) {
+    .main-content {
+      margin-left: 22px;
+    }
+    .search {
+      width: 60%;
+  
+      left: 10%;
+    }
+  }
+  
