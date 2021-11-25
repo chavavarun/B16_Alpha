@@ -33,8 +33,9 @@ export class HomePageComponent implements OnInit {
       book.category.toLocaleLowerCase().includes(val.toLocaleLowerCase())
      );
   }
- public cleanImage(url:string){
-    return this.domSanitizer.bypassSecurityTrustUrl(this.link + url)
+ public loadImage(url:string){
+    
+    return this.link+url
   }
 
   public addToCartlist(bookId:any){

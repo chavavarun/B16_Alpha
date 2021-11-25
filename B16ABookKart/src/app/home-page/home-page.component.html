@@ -20,7 +20,7 @@
         >
           <img
             mat-card-image
-            [src]="cleanImage(book.coverFileName)"
+            [src]="loadImage(book.coverFileName)"
             height="300px"
           /> <p style="color: blueviolet;font-weight: bold;">{{ book.title }}</p>
           <div>Price: &#x20b9;{{ book.price }}</div>

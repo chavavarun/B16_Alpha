@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CommonService {
   apiPath = 'https://bookcart.azurewebsites.net/api/';
   userId: any;
+  
 
   constructor(private _http: HttpClient) {}
 
